@@ -1,0 +1,36 @@
+
+/* 左側サイドバーの装飾 */
+.md-sidebar--primary .md-sidebar__inner {
+    border: 1px solid #888;
+    border-radius: 8px;
+    padding: 8px;
+}
+.md-sidebar--primary label {
+    border-bottom: 1px solid #5c5c5c;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+}
+.md-sidebar--primary a.md-nav__link::before {
+    content: "#";
+}
+/* 右側サイドバーの装飾 */
+.md-sidebar--secondary {
+    display: none !important;
+}
+
+/* 見出しの装飾 */
+.md-content h1 {
+    font-size: 2.0rem;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(104,163,239,0.45);
+    color: #1e2a40;
+    margin-bottom: 0px;
+}
+.md-content h2 {
+    background: rgba(104, 163, 239, 0.15);
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    font-weight: 600;
+}

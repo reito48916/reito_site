@@ -1,3 +1,23 @@
-site_name: My Docs
+site_name: れいとの軌跡
 theme:
   name: material
+features:
+    - navigation.sections
+
+extra_css:
+  - css/extra.css
+
+nav:
+  - ホーム: index.md
+
+  - ブログ:
+      - 最新: blog/2025/12/04.md
+      - 2025:
+          - 12月:
+            - "04": blog/2025/12/04.md
+
+  - 作品:
+      - 作品って？: works/index.md
+
+  - 知見:
+      - MkDocs: knowledge/mkdocs.md

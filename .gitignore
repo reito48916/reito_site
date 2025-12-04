@@ -1,0 +1,4 @@
+#site/以下は
+#$mkdocs gh-deploy
+#によって別ブランチに自動的にプッシュされるので自分でaddしない
+site/
