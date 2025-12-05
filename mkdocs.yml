@@ -7,11 +7,13 @@ features:
 extra_css:
   - css/extra.css
 
+markdown_extensions:
+  - attr_list
+
 nav:
   - ホーム: index.md
 
   - ブログ:
-      - 最新: blog/2025/12/04.md
       - 2025:
           - 12月:
             - "04": blog/2025/12/04.md
@@ -20,4 +22,7 @@ nav:
       - 作品って？: works/index.md
 
   - 知見:
-      - MkDocs: knowledge/mkdocs.md
+      - 未分類:
+        - Github Ppages + MkDocsでサイト構築: knowledge/other/create_site_with_github_pages_and_mkdocs.md
+      - Tips:
+        - MkDocs: knowledge/tips/mkdocs.md
