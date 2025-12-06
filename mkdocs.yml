@@ -1,8 +1,6 @@
 site_name: れいとの軌跡
 theme:
   name: material
-features:
-    - navigation.sections
 
 extra_css:
   - css/extra.css
@@ -17,6 +15,7 @@ nav:
       - 2025:
           - 12月:
             - "04": blog/2025/12/04.md
+            - "05": blog/2025/12/05.md
 
   - 作品:
       - 作品って？: works/index.md

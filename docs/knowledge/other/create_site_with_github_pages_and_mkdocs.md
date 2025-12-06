@@ -49,7 +49,7 @@ INFO    -  [17:09:32] Serving on http://127.0.0.1:8000/
 
 実際http://127.0.0.1:8000/にアクセスしてみると、ひな形原稿をビルドして得られたファイル群からなる「webサイト」が確認できる。
 
-![MkDocsのひな型ページプレビュー](/images/disposable/2025120501.png){ .screenshot }
+![MkDocsのひな型ページプレビュー](../../images/disposable/2025120501.png){ .screenshot width="640px" }
 
 あとはMKDocsのリファレンスに従いこの「原稿」を記述していくのだが…ここから先は公式リファレンスに譲ろう。 
 参考：[MkDocs:ユーザーガイド](https://www.mkdocs.org/user-guide/)
