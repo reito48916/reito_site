@@ -2,7 +2,16 @@ site_name: れいとの軌跡
 
 theme:
   name: material
+  features:
+    - navigation.indexes
+  language: ja
 
+plugins:
+  - search
+  - blog:
+      archive_date_format: yyyy年MM月
+      archive_url_date_format: yyyy/MM
+      
 extra_css:
   - css/extra.css
 
@@ -13,58 +22,7 @@ nav:
   - ホーム: index.md
 
   - ブログ:
-      - 2025:
-          - 12月:
-            - "04": blog/2025/12/04.md
-            - "05": blog/2025/12/05.md
-            - "06": blog/2025/12/06.md
-            - "07": blog/2025/12/07.md
-            - "08": blog/2025/12/08.md
-            - "09": blog/2025/12/09.md
-            - "10": blog/2025/12/10.md
-            - "11": blog/2025/12/11.md
-            - "12": blog/2025/12/12.md
-            - "13": blog/2025/12/13.md
-            - "14": blog/2025/12/14.md
-            - "15": blog/2025/12/15.md
-            - "16": blog/2025/12/16.md
-            - "17": blog/2025/12/17.md
-            - "18": blog/2025/12/18.md
-            - "19": blog/2025/12/19.md
-            - "20": blog/2025/12/20.md
-            - "21": blog/2025/12/21.md
-            - "22": blog/2025/12/22.md
-            - "23": blog/2025/12/23.md
-            - "24": blog/2025/12/24.md
-            - "25": blog/2025/12/25.md
-            - "26": blog/2025/12/26.md
-            - "27": blog/2025/12/27.md
-            - "28": blog/2025/12/28.md
-            - "29": blog/2025/12/29.md
-            - "30": blog/2025/12/30.md
-            - "31": blog/2025/12/31.md
-      - 2026:
-          - 1月:
-            - "01": blog/2026/01/01.md
-            - "02": blog/2026/01/02.md
-            - "10": blog/2026/01/10.md
-            - "11": blog/2026/01/11.md
-            - "12": blog/2026/01/12.md
-            - "13": blog/2026/01/13.md
-            - "14": blog/2026/01/14.md
-            - "15": blog/2026/01/15.md
-          - 2月:
-            - "03": blog/2026/02/03.md
-            - "04": blog/2026/02/04.md
-            - "05": blog/2026/02/05.md
-            - "06": blog/2026/02/06.md
-            - "07": blog/2026/02/07.md
-          - 5月:
-            - "12": blog/2026/05/12.md
-            - "13": blog/2026/05/13.md
-            - "14": blog/2026/05/14.md
-          - 8月:
-            - "26": blog/2026/08/26.md
+    - blog/index.md
 
   - 作品:
       - 作品って？: works/index.md
