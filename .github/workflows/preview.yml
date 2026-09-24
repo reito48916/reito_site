@@ -40,13 +40,22 @@ jobs:
         run: |
           pip install mkdocs-material
 
+      # preview/xxxx → xxxx を取り出す
+      - name: Get preview ID
+        id: preview
+        shell: bash
+        run: |
+          PREVIEW_ID="${GITHUB_REF_NAME#preview/}"
+          echo "id=$PREVIEW_ID" >> "$GITHUB_OUTPUT"
+          echo "Preview ID: $PREVIEW_ID"
+
       - name: Build main site
         working-directory: main
         run: mkdocs build -d ../deploy
 
       - name: Build preview site
         working-directory: preview
-        run: mkdocs build -d ../deploy/_preview/test
+        run: mkdocs build -d "../deploy/_preview/${{ steps.preview.outputs.id }}"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
