@@ -1,0 +1,70 @@
+name: Build MkDocs Preview
+
+on:
+  workflow_dispatch:
+    inputs:
+      preview_id:
+        description: "Preview ID"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout preview branch
+        uses: actions/checkout@v6
+        with:
+          ref: preview/${{ inputs.preview_id }}
+          path: preview
+
+      - name: Checkout main branch
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          path: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material
+
+      - name: Build main site
+        working-directory: main
+        run: mkdocs build -d ../deploy
+
+      - name: Build preview site
+        working-directory: preview
+        run: mkdocs build -d "../deploy/_preview/${{ inputs.preview_id }}"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: deploy
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
