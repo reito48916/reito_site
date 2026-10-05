@@ -1,4 +1,5 @@
 name: Build MkDocs Preview
+run-name: Preview ${{ inputs.preview_id }}
 
 on:
   workflow_dispatch:
