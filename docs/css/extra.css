@@ -74,3 +74,7 @@ img.screenshot:hover {
   vertical-align: middle;
   margin: 0 0.5%;
 }
+
+.md-content p:has(.article-image) {
+  text-align: center;
+}
